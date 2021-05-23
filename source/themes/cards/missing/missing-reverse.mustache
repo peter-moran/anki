@@ -1,9 +1,6 @@
 <div id="answer" class="anki-Reverse">
-  <section class="missing missing-reverse">
+  <section class="missing">
     <header class="missing-Header">
-      <h1 class="missing-Header_Title">
-        {{★ Title}}
-      </h1>
       {{#☆ Subtitle}}
         <h2 class="missing-Header_Subtitle">
           {{☆ Subtitle}}
@@ -14,14 +11,21 @@
           <code>{{☆ Syntax (inline code)}}</code>
         </p>
       {{/☆ Syntax (inline code)}}
+      <h1 class="missing-Header_Title">
+        {{cloze:★ Title}}
+      </h1>
     </header>
     <div class="missing-KeyPoint">
-      <div class="missing-KeyPoint_Code">
-        {{close:★ Key point (code block or image)}}
-      </div>
-      <div class="missing-KeyPoint_Notes">
-        {{★ Key point notes}}
-      </div>
+      {{#★ Sample (code block or image)}}
+        <div class="missing-KeyPoint_Code">
+          {{★ Sample (code block or image)}}
+        </div>
+      {{/★ Sample (code block or image)}}
+      {{#★ Key point notes}}
+        <div class="missing-KeyPoint_Notes">
+          {{★ Key point notes}}
+        </div>
+      {{/★ Key point notes}}
     </div>
     {{#✎ Other notes}}
       <footer class="missing-Notes">
