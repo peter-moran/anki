@@ -14,9 +14,7 @@
 
 ## Basic syntax highlighting
 
-This allows you to highlight code quickly, but is not [full highlighting](#full-syntax-highlighting). It uses simple [HTML5 tags](https://developer.mozilla.org/en/docs/Web/HTML/Element) to add colour to your code.
-
-Works with any `<pre>` or `<code>` block:
+You can mark any inline `<code>` with **bold** or _**italic**_ buttons in the Anki editor for basic highlighting. It uses simple [HTML5 tags](https://developer.mozilla.org/en/docs/Web/HTML/Element) to add colour to your code (for [full highlighting](#full-syntax-highlighting) with `<pre>` code blocks, see below).
 
 1. **Highlight**:
     + `<b>` or `<strong>`
@@ -40,29 +38,15 @@ Anki Theme provides styles for use with [Pandoc](https://pandoc.org/try/), to ge
 
 That's it. You're done. Simple, right?!
 
-### The "proper" way
+### So, you want more?
 
-> Requires [Homebrew](https://brew.sh) and [Pandoc](https://pandoc.org/).
-
-1. Write your code as [Markdown fenced code blocks](https://help.github.com/articles/github-flavored-markdown/#fenced-code-blocks) in a `file.md`
-2. `brew install pandoc`
-3. `pandoc file.md`
-4. Follow steps `3—6` above
-
-If you've [installed the Anki theme](../../../README.md#advanced), <s>!= do something</s>
-
-
-## Backup your code
-
-For the risk-averse, you can keep `raw text` in the `✎ Markdown` field provided — here you can store raw markdown, or a link to the original code (Github gist for example).
+Once you've levelled up your programming skills, you can try your hand at doing things [the professional way](#the-professional-way-)
 
 
 
 ## Customising themes
 
-Anki themes should be _extended_ with `npm`, **not** edited directly.
-
-### Change colors
+### The easy way
 
 For quick customisations, view these files:
 
@@ -70,16 +54,13 @@ For quick customisations, view these files:
 source
 │
 └───_global
-    │   config.less
-    │   main.less
     │
     └───modules
-          _root.less
           colors.less
           typography.less
 ```
 
-#### The easy way
+#### Change colors
 
 Override the [css variables](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties) (see `colors.less` and `typography.less`) — in Anki:
 
@@ -89,26 +70,16 @@ Override the [css variables](https://developer.mozilla.org/en-US/docs/Web/CSS/Us
 - Add your changes in `Styling` field (at the bottom)
 - Repeat for each Card Type
 
-You'll need to do this everytime you install the deck.
-
-#### The "proper" way
-
-Follow installation directions on [custom theme](../../../README.md#advanced) first.
-
-1. Copy `config.less` and `main.less` to your own repo
-2. Copy `colors.less` and any others you'd like to change
-2. Change the [css variables](../source/_global/_root.less)
-3. Recompile the css with `npm run css`
-4. Add to card type as [shown above](#css-variables)
+You'll need to do this everytime you install the deck. If you'd like to make your changes permanent, you'll need to do things ...
 
 
-### Create your own card or theme
+### The professional way ...
 
-You're mostly on your own here, for now. But if you're a skilled dev, you'll figure it out :)
+So you want to:
 
-- Follow the [installation instructions](../../../README.md#advanced) first.
-- Use the `source/themes/cards/...` as a starting point
-- Create your own HTML and [Less](http://lesscss.org)
-- Preview with [Mustache](https://www.npmjs.com/package/mustache)
-- Compile with `npm run build`
+- Highlight your code blocks offline
+- Convert Markdown to HTML automatically
+- Select your theme colors
+- Create custom cards
 
+Then [enter the world](../advanced/index.md) of the professional developer!
